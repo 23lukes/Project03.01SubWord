@@ -1,5 +1,4 @@
 import java.io.File;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -48,10 +47,7 @@ public class SubWordFinder implements WordFinder    {
 
     }
 
-    //this code can be used elsewhere, this is just an example
-
-
-    int binarySearch(ArrayList<String> list, int left, int right, String word)  {
+    private int binarySearch(ArrayList<String> list, int left, int right, String word)  {
         if(right >= left)   {
             int mid = left + ((right-left)/2);
             if(list.get(mid).equals(word))
@@ -107,6 +103,10 @@ public class SubWordFinder implements WordFinder    {
         return binarySearch(bucket, 0, bucket.size()-1, word) >= 0;
     }
 
+    /**
+     * This is the main method for SubWord Finder
+     * @param args
+     */
     public static void main(String[] args) {
         SubWordFinder app = new SubWordFinder();
         ArrayList<SubWord> subwords = app.getSubWords();
